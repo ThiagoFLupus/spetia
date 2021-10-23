@@ -89,7 +89,6 @@ class ToFullName{
 
         return response.status(200).send({
             message: "success",
-            data: this.getConvertedToFullName(),
             extension: this.getConvertedToFullName()
         })
     }
@@ -101,25 +100,37 @@ class ToFullName{
         //does parameter exist?
         if(param == null || typeof param === "undefined" || param == ""){
             errorsValidations.push("Parâmetro não reconhecido ou inexistente")
-        }
+        }else{
+            //único caracter especial é o menos?
+    
+            //Is symbol "minus" in initial position?
+            for(let i= 1; i < param.length; i++){
+                if(param.charAt(i) == '-') {
+                    errorsValidations.push("O símbolo 'menos' só pode ficar no início do valor do parâmetro")
+                    return errorsValidations
+                }
+            }
 
-        //único caracter especial é o menos?
-        //tem menos apenas na frente?
-
-        //does parameter value is in permited interval?
-        try{
-            let numericParam= parseInt(param)
+            //is parameter value in permited interval and is it valid numeric?
+            let numericParam= null
+            try{
+                numericParam= parseInt(param)
+                if(numericParam.toString().length < param.length){
+                    errorsValidations.push("Parâmetro inválido. O parâmetro enviado dever ser numérico")
+                }
+            }catch(error){
+                errorsValidations.push("Parâmetro inválido. O parâmetro enviado dever ser numérico")
+                return errorsValidations
+            }
             if(numericParam < -99999 || numericParam > 99999){
                 errorsValidations.push("Valor de parâmetro fora do intervalo permitido")
-            }                                                                       
-        }catch(error){
-            errorsValidations.push("Erro inesperado na verificação de parâmetro")
-        }
+            }                                                       
+        }   
         
         return errorsValidations
     }
 
-    //return names of digits in each position of got route parameter
+    //return names of digits in each position of got route parameter, to convert by extension
     getFromDictionary(valueP, position){
         let value= parseInt(valueP)
         const dictionary= {
