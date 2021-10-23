@@ -1,6 +1,6 @@
-===================== Spetia ==========================
+===================== Spetia ===========================================================
 
-/***********   configs  **************/
+/********************************   configs  *******************************************/
 version nodejs: 10.19.0
 version npm: 6.14.4
 version docker: 19.03.8
@@ -9,7 +9,7 @@ version docker-compose: 1.25.0
 image docker: node:16
 
 
-/***********  instructions  **********/
+/*******************************  instructions  ****************************************/
 1. Para instalar o projeto:
     1.1. Rodar o comando, na pasta 'backend', para instalar as dependências do node:
         npm install
