@@ -1,7 +1,11 @@
 ===================== Spetia ===========================================================
 
 /********************************   configs  *******************************************/
+<<<<<<< HEAD
 version nodejs: 10.19.0 
+=======
+version nodejs: 10.19.0 \n
+>>>>>>> 21d72683df3fbe99453a4c72bc1c917e6f7baf4d
 version npm: 6.14.4
 version docker: 19.03.8
 version docker-compose: 1.25.0
@@ -26,6 +30,7 @@ digitar no campo de URL do navegador: http://localhos:3001/to-fullname/1593 .
 2. Para rodar os testes unitários da aplicação, usando Docker:
     2.1. Com o container funcionando, após o passo 1.2, rodar o comando:
         docker exec -it spetia-backend npm test
+<<<<<<< HEAD
 
 3. Para rodar instalar o projeto, sem Docker:
     3.1. Siga o passo 1.1
@@ -34,3 +39,5 @@ digitar no campo de URL do navegador: http://localhos:3001/to-fullname/1593 .
 4. Para rodar os testes unitários da aplicação, sem o Docker:
     4.1. na pasta 'backend', rodar o comando:
         npm test
+=======
+>>>>>>> 21d72683df3fbe99453a4c72bc1c917e6f7baf4d
