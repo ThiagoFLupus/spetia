@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  spetia-backend:
+    image: node:16
+    container_name: spetia-backend
+    volumes:
+      - ./backend:/usr/share/nginx
+    ports:
+      - "3001:3001"
+    working_dir: /usr/share/nginx
+    command: "node start"

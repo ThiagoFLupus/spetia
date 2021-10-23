@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Mini-projeto desenvolvido a respeito de um processo seletivo para desenvolvedor",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node start.js"
+  },
+  "author": "Thiago de Souza Ferreira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/register": "^7.15.3",
+    "jest": "^27.3.1"
+  }
+}
